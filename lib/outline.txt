@@ -1,0 +1,25 @@
+views
+models
+controllers
+global
+functions
+widgets
+
+- create reusable widget
+create stateless widget
+write variables
+create constructor
+use variables in build
+
+- model
+create model class
+write variables
+create constructor
+
+- use in chats screen
+create chat model list
+use listview.builder or listview.separated
+
+chats[0] means 1st item of list
+chats[0].name means name used in 1st item
+

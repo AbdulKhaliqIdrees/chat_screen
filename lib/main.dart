@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:taskno1/Calls.dart';
-import 'package:taskno1/Camer_alt.dart';
-import 'package:taskno1/Chats.dart';
-import 'package:taskno1/Status.dart';
+import 'package:taskno1/screens/calls.dart';
+import 'package:taskno1/screens/camer_alt.dart';
+import 'package:taskno1/screens/status.dart';
+import 'package:taskno1/screens/chats.dart';
 
-void main(){
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: "Chat_Screen App",
-    home: First(),
-  ));
+void main() {
+  runApp(const MyApp());
 }
 
-class First extends StatelessWidget{
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Chat_Screen App",
+      home: First(),
+    );
+  }
+}
+
+class First extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -20,19 +29,25 @@ class First extends StatelessWidget{
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal.shade900,
-          title: Text("WhatsApp",style: TextStyle(fontSize: 25),),
-          actions: [
-            Icon(Icons.search,size: 30,),
-            Icon(Icons.more_vert,size:30),
+          title: const Text(
+            "WhatsApp",
+            style: TextStyle(fontSize: 25),
+          ),
+          actions: const [
+            Icon(
+              Icons.search,
+              size: 30,
+            ),
+            Icon(Icons.more_vert, size: 30),
           ],
-          bottom:TabBar(
+          bottom: const TabBar(
             tabs: [
               Icon(Icons.camera_alt),
               Text("CHATS"),
               Text("STATUS"),
               Text("CALLS"),
             ],
-            ) ,    
+          ),
         ),
         body: TabBarView(
           children: [
@@ -45,5 +60,4 @@ class First extends StatelessWidget{
       ),
     );
   }
-
 }
